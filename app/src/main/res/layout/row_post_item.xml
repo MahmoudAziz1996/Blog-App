@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginBottom="8dp"
+    android:translationZ="5dp"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="8dp">
+
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <ImageView
+            android:id="@+id/row_post_img"
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:layout_marginTop="8dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/row_post_title"
+            android:background="#8F8B8B" />
+
+        <TextView
+            android:id="@+id/post_like_counter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            app:layout_constraintEnd_toStartOf="@+id/post_comment_counter"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/post_comment_counter"
+            android:text="0 Likes"
+            android:layout_marginLeft="16dp" />
+
+        <TextView
+            android:id="@+id/post_comment_counter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:gravity="center_horizontal"
+            app:layout_constraintEnd_toStartOf="@+id/post_share_counter"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/post_like_counter"
+            app:layout_constraintTop_toBottomOf="@+id/row_post_img"
+            android:text="0 Comments" />
+
+        <TextView
+            android:id="@+id/post_share_counter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="0 Shares"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/post_comment_counter"
+            app:layout_constraintTop_toTopOf="@+id/post_comment_counter"
+            android:layout_marginRight="16dp" />
+
+        <TextView
+            android:id="@+id/post_like_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:drawableStart="@drawable/ic_like_gray_icon"
+            android:drawablePadding="5dp"
+            android:gravity="center_vertical"
+            android:text="@string/like"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/post_comment_button"
+            app:layout_constraintEnd_toStartOf="@+id/post_comment_button"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/post_comment_button"
+            android:layout_marginLeft="16dp"
+            android:drawableLeft="@drawable/ic_like_gray_icon" />
+
+        <TextView
+            android:id="@+id/post_comment_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="45dp"
+            android:layout_marginBottom="8dp"
+            android:drawableStart="@drawable/ic_comment_icon"
+            android:drawablePadding="5dp"
+            android:gravity="center_vertical"
+            android:text="@string/comment"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/post_share_button"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/post_like_button"
+            app:layout_constraintTop_toBottomOf="@+id/row_post_img"
+            app:layout_constraintVertical_bias="0.0"
+            android:drawableLeft="@drawable/ic_comment_icon" />
+
+        <TextView
+            android:id="@+id/post_share_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:drawableStart="@drawable/ic_share_icon"
+            android:drawablePadding="5dp"
+            android:gravity=""
+            android:text="@string/share"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/post_comment_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/post_comment_button"
+            app:layout_constraintTop_toTopOf="@+id/post_comment_button"
+            android:layout_marginRight="16dp"
+            android:drawableLeft="@drawable/ic_share_icon" />
+
+        <com.borjabravo.readmoretextview.ReadMoreTextView
+            android:id="@+id/row_post_title"
+            android:layout_width="0dp"
+            app:trimExpandedText="@string/Less"
+            app:trimCollapsedText="@string/ShowMore"
+            app:trimMode="trimModeLine"
+            app:trimLines="2"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:text="TextView"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/row_post_profile_img" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/row_post_profile_img"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:src="@mipmap/ic_launcher_round"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/row_post_profile_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:text="Mahmoud Aziz"
+            app:layout_constraintStart_toEndOf="@+id/row_post_profile_img"
+            app:layout_constraintTop_toTopOf="@+id/row_post_profile_img" />
+
+        <TextView
+            android:id="@+id/row_post_profile_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:text="23/9/2019"
+            app:layout_constraintBottom_toBottomOf="@+id/row_post_profile_img"
+            app:layout_constraintStart_toEndOf="@+id/row_post_profile_img" />
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.v7.widget.CardView>
+
